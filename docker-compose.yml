@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  sfe_utilities:
+    build: .
+    restart: always
+
+    env_file: .env
+
+    depends_on:
+      - db
+
+  db:
+    image: mongo
+    restart: always

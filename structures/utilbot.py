@@ -15,8 +15,6 @@ class UtilBot(commands.Bot):
 
         self.db = motor.motor_asyncio.AsyncIOMotorClient(DATABASE_URI).sfe_utilities
 
-        if (self.db.con)
-
         self.logger = logging.getLogger("utils")
         self.logger.setLevel(int(LOG_LEVEL))
 

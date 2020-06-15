@@ -47,7 +47,7 @@ class CustomCommands(commands.Cog):
 
     @cc.command(name="create")
     @perm_level(0)
-    async def create_command(self, ctx: commands.Context):
+    async def create_command(self, ctx: commands.Context, name: str):
         if ctx.guild is None:
             return
 
