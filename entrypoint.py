@@ -7,7 +7,7 @@ from structures.utilbot import UtilBot
 from utils.env import TOKEN
 
 bot = UtilBot(command_prefix="!",
-             description="Utility commands & sthuff idk don't @ me")
+              description="Utility commands & sthuff idk don't @ me")
 
 @bot.event
 async def on_ready():
