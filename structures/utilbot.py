@@ -33,12 +33,12 @@ class UtilBot(commands.Bot):
 
     async def on_ready():
         # Console write when bot starts
-        bot.logger.info(
-            f'\n\nLogged in as: {bot.user.name} - {bot.user.id}\n')
+        self.logger.info(
+            f'\n\nLogged in as: {self.user.name} - {self.user.id}\n')
 
         # load cogs
         cog_count = 0
-        bot.logger.debug(f"Cogs to load: {','.join(os.listdir('./cogs'))}")
+        self.logger.debug(f"Cogs to load: {','.join(os.listdir('./cogs'))}")
 
         for cog in os.listdir('./cogs'):
             if cog.startswith('__'):
@@ -46,18 +46,18 @@ class UtilBot(commands.Bot):
             else:
                 ext = "cogs." + cog.replace(".py", "")
                 try:
-                    bot.logger.info(f"Loading {ext}...")
-                    bot.load_extension(ext)
+                    self.logger.info(f"Loading {ext}...")
+                    self.load_extension(ext)
                     cog_count += 1
                 except Exception as e:
                     error = "".join(traceback.format_exception(
                         type(e), e, e.__traceback__))
-                    bot.logger.exception(f'Failed to load ext {ext}.\n{error}')
+                    self.logger.exception(f'Failed to load ext {ext}.\n{error}')
 
-        bot.logger.debug(f"Successfully loaded {cog_count} cogs.")
+        self.logger.debug(f"Successfully loaded {cog_count} cogs.")
 
-        bot.logger.info("Init complete.")
-        bot.logger.info('------')
+        self.logger.info("Init complete.")
+        self.logger.info('------')
 
     async def on_command_error(self, ctx, error):
         """The event triggered when an error is raised while invoking a command.
@@ -116,15 +116,15 @@ class UtilBot(commands.Bot):
             return await ctx.send(error)
 
         # All other Errors not returned come here... And we can just print the default TraceBack.
-        self.bot.logger.exception('Ignoring exception in command {}:'.format(
+        self.logger.exception('Ignoring exception in command {}:'.format(
             ctx.command)
         )
         error = "".join(
             traceback.format_exception(type(error), error, error.__traceback__)
         )
-        self.bot.logger.exception(error)
+        self.logger.exception(error)
 
-        channel = self.bot.get_channel(623247355575009331)
+        channel = self.get_channel(623247355575009331)
         if channel:
             await channel.send(
                 f"```py\n{error[-1950:]}\n```"
