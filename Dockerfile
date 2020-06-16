@@ -8,4 +8,4 @@ RUN apk update && apk add gcc musl-dev && pip install -r requirements.txt
 
 COPY . .
 
-ENTRYPOINT [ "python", "entrypoint.py" ]
+ENTRYPOINT [ "python", "main.py" ]

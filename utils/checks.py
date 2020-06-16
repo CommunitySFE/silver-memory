@@ -29,7 +29,9 @@ class CommandPermissionError(commands.CommandError):
 
 
 def perm_level(permission):
-    """A check to test whether a user can run a command based on their permission level."""
+    """
+    A check to test whether a user can run a command based on their permission level.
+    """
     async def predicate(ctx):
         if type(ctx.author) is discord.Member:
             logging.getLogger("utils").debug(

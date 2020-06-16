@@ -9,4 +9,4 @@ if os.environ.get("MODE") != "production":
 TOKEN = os.environ.get("TOKEN")
 DATABASE_URI = os.environ.get("DATABASE_URI")
 LOG_LEVEL = os.environ.get("LOG_LEVEL")
-MAINTAINERS = os.environ.get("OWNERS").split(",")
+MAINTAINERS = os.environ.get("MAINTAINERS").split(",")

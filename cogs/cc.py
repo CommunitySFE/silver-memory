@@ -277,6 +277,7 @@ class CustomCommands(commands.Cog):
         await ctx.send(':ok_hand: custom command removed successfully.')
     
     @cc.command(name="forcedelete")
+    @perm_level(3)
     async def force_delete_custom_command(self, ctx, name: str):
         custom_command = await self.db.commands.find_one({
             'name': name
