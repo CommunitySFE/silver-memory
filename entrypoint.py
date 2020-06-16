@@ -46,6 +46,7 @@ def signal_handler(sig, frame):
     run_coroutine_threadsafe(bot.logout(), bot.loop)
     exit(0)
 
+
 signal.signal(signal.SIGINT, signal_handler)
 
 try:
