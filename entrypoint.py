@@ -1,6 +1,5 @@
 import os
 import signal
-import sys
 
 from asyncio import run_coroutine_threadsafe
 
