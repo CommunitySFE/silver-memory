@@ -37,7 +37,6 @@ async def on_ready():
 
     bot.logger.debug(f"Successfully loaded {cog_count} cogs.")
 
-
     bot.logger.info("Init complete.")
     bot.logger.info('------')
 
