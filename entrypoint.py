@@ -15,7 +15,7 @@ async def on_ready():
     # Console write when bot starts
     bot.logger.info(
         f'\n\nLogged in as: {bot.user.name} - {bot.user.id}\n')
-    
+
     # load cogs
     cog_count = 0
     bot.logger.debug(f"Cogs to load: {','.join(os.listdir('./cogs'))}")
