@@ -33,12 +33,12 @@ async def on_ready():
             except Exception as e:
                 error = "".join(traceback.format_exception(
                     type(e), e, e.__traceback__))
-                bot.logger.exception(f'Failed to load extension {ext}.\n{error}')
+                bot.logger.exception(f'Failed to load ext {ext}.\n{error}')
 
     bot.logger.debug(f"Successfully loaded {cog_count} cogs.")
 
 
-    bot.logger.info("Initialization complete.")
+    bot.logger.info("Init complete.")
     bot.logger.info('------')
 
 
